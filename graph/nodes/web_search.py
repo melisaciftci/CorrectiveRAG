@@ -11,7 +11,7 @@ def web_search(state: GraphState) -> Dict[str, Any]:
     question = state["question"]
     documents = state["documents"]
 
-    docs = web_search_tool.insert({"query": question})
+    docs = web_search_tool.invoke({"query": question})
     web_results ="\n".join(d["content"] for d in docs)
     web_results = Document(page_content=web_results)
 
