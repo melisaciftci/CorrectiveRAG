@@ -20,7 +20,7 @@ text_splitter = RecursiveCharacterTextSplitter.from_tiktoken_encoder(
 
 splits = text_splitter.split_documents(docs_list)
 
-vectorstore = Chroma.from_dcouments(
+vectorstore = Chroma.from_documents(
     documents=splits,
     collection_name="rag-chroma",
     embedding=OpenAIEmbeddings(),
